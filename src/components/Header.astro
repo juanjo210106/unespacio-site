@@ -1,0 +1,41 @@
+---
+const navLinks = [
+  { name: 'INICIO', url: '/' },
+  { name: 'JARDÍN', url: '/jardin' },
+  { name: 'REFORMAS', url: '/reformas' },
+  { name: 'PLACAS SOLARES', url: '/placas-solares' },
+  { name: 'EXTERIORES', url: '/exteriores' },
+];
+---
+
+<header class="absolute top-0 left-0 w-full z-50 px-6 pt-4 pb-4 md:px-12 flex justify-between items-center text-white">
+  <!-- Aflojamos el margen negativo para que respire por arriba -->
+  <a href="/" class="shrink-0 flex items-center -mt-2 md:-mt-4 lg:-mt-8">
+    <img src="/IDENTIDAD-SIN-FONDO/logoblanco-Transparente.png" alt="UnEspacio Logo" class="h-24 md:h-32 lg:h-[180px] w-auto object-contain object-left" />
+  </a>
+  
+  <nav class="hidden md:flex gap-6 lg:gap-8 text-sm font-sans font-medium items-center">
+    {navLinks.map((link) => (
+      <a href={link.url} class="group relative overflow-hidden flex flex-col uppercase tracking-widest text-[13px] font-bold">
+        <!-- Texto original que sube -->
+        <span class="transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">
+          {link.name}
+        </span>
+        <!-- Texto duplicado que sube desde abajo -->
+        <span class="absolute top-0 left-0 translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0" aria-hidden="true">
+          {link.name}
+        </span>
+      </a>
+    ))}
+  </nav>
+
+  <div class="flex items-center">
+    <a href="/contacto" class="group relative px-7 py-3.5 border border-white/30 overflow-hidden flex items-center gap-3 hover:border-white transition-colors duration-500 rounded-sm">
+      <span class="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"></span>
+      <div class="relative z-10 flex items-center gap-3 group-hover:text-black transition-colors duration-500">
+        <span class="text-[11px] font-sans font-bold tracking-widest uppercase">Escríbenos</span>
+        <div class="w-1.5 h-1.5 rounded-full bg-white group-hover:bg-black transition-colors duration-500"></div>
+      </div>
+    </a>
+  </div>
+</header>
