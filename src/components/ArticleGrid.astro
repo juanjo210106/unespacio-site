@@ -1,0 +1,65 @@
+---
+const articles = [
+  {
+    title: "The Architecture of Tomorrow",
+    excerpt: "How modern web frameworks are reshaping the digital landscape and what it means for the future.",
+    category: "Technology",
+    date: "Apr 23, 2026",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Minimalism as a Feature",
+    excerpt: "Why removing elements often leads to better user engagement and higher conversion rates.",
+    category: "Design",
+    date: "Apr 21, 2026",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    title: "Monetizing Without Compromise",
+    excerpt: "Strategies for integrating high-RPM ads without destroying the user experience.",
+    category: "Business",
+    date: "Apr 18, 2026",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+  }
+];
+---
+<section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="mb-12 flex items-center justify-between">
+    <h2 class="font-serif text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Featured Articles</h2>
+    <a href="/articles" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">View all →</a>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {articles.map((article) => (
+      <article class="group flex flex-col items-start justify-between">
+        <div class="relative w-full mb-4 overflow-hidden rounded-2xl">
+          <img src={article.image} alt={article.title} class="aspect-[16/9] w-full object-cover sm:aspect-[2/1] lg:aspect-[3/2] transition-transform duration-300 group-hover:scale-105" />
+          <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-900/10"></div>
+        </div>
+        <div class="max-w-xl">
+          <div class="mt-2 flex items-center gap-x-4 text-xs">
+            <time datetime={article.date} class="text-slate-500">{article.date}</time>
+            <span class="relative z-10 rounded-full bg-slate-100 px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-200 transition-colors">
+              {article.category}
+            </span>
+          </div>
+          <div class="group relative">
+            <h3 class="mt-3 font-serif text-2xl font-semibold leading-8 text-slate-900 group-hover:text-slate-600 transition-colors">
+              <a href="#">
+                <span class="absolute inset-0"></span>
+                {article.title}
+              </a>
+            </h3>
+            <p class="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{article.excerpt}</p>
+          </div>
+          <div class="mt-4 flex items-center gap-x-4 text-xs text-slate-500">
+            {article.readTime}
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
