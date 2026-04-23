@@ -5,13 +5,14 @@ const navLinks = [
   { name: 'REFORMAS', url: '/reformas' },
   { name: 'PLACAS SOLARES', url: '/placas-solares' },
   { name: 'EXTERIORES', url: '/exteriores' },
+  { name: 'ESTUDIO 2D', url: '/estudio-2d' },
 ];
 ---
 
-<header class="absolute top-0 left-0 w-full z-50 px-6 pt-4 pb-4 md:px-12 flex justify-between items-center text-white">
-  <!-- Aflojamos el margen negativo para que respire por arriba -->
-  <a href="/" class="shrink-0 flex items-center -mt-2 md:-mt-4 lg:-mt-8">
-    <img src="/IDENTIDAD-SIN-FONDO/logoblanco-Transparente.png" alt="UnEspacio Logo" class="h-24 md:h-32 lg:h-[180px] w-auto object-contain object-left" />
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 px-6 pt-4 pb-4 md:px-12 flex justify-between items-center text-white transition-all duration-300 border-b border-transparent">
+  <!-- Quitamos los margenes negativos para que se alinee verticalmente con los enlaces -->
+  <a href="/" class="shrink-0 flex items-center logo-container transition-all duration-300">
+    <img src="/IDENTIDAD-SIN-FONDO/logoblanco-Transparente.png" alt="UnEspacio Logo" class="h-16 md:h-20 lg:h-[160px] w-auto object-contain object-left transition-all duration-300 logo-img" />
   </a>
   
   <nav class="hidden md:flex gap-6 lg:gap-8 text-sm font-sans font-medium items-center">
@@ -32,10 +33,35 @@ const navLinks = [
   <div class="flex items-center">
     <a href="/contacto" class="group relative px-7 py-3.5 border border-white/30 overflow-hidden flex items-center gap-3 hover:border-white transition-colors duration-500 rounded-sm">
       <span class="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"></span>
-      <div class="relative z-10 flex items-center gap-3 group-hover:text-black transition-colors duration-500">
+      <div class="relative z-10 flex items-center gap-3 group-hover:text-[#0F172A] transition-colors duration-500">
         <span class="text-[11px] font-sans font-bold tracking-widest uppercase">Escríbenos</span>
-        <div class="w-1.5 h-1.5 rounded-full bg-white group-hover:bg-black transition-colors duration-500"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-white group-hover:bg-[#0F172A] transition-colors duration-500"></div>
       </div>
     </a>
   </div>
 </header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const logo = header?.querySelector('.logo-img');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-[#0F172A]/95', 'backdrop-blur-md', 'border-white/10');
+      header?.classList.remove('border-transparent', 'pt-4', 'pb-4');
+      header?.classList.add('py-2');
+      if(logo) {
+        // Mantenemos un tamaño generoso incluso con scroll
+        logo.classList.remove('h-16', 'md:h-20', 'lg:h-[160px]');
+        logo.classList.add('h-14', 'md:h-16', 'lg:h-[120px]');
+      }
+    } else {
+      header?.classList.remove('bg-[#0F172A]/95', 'backdrop-blur-md', 'border-white/10', 'py-2');
+      header?.classList.add('border-transparent', 'pt-4', 'pb-4');
+      if(logo) {
+        logo.classList.remove('h-14', 'md:h-16', 'lg:h-[120px]');
+        logo.classList.add('h-16', 'md:h-20', 'lg:h-[160px]');
+      }
+    }
+  });
+</script>

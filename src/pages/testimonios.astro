@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const testimonials = [
+  {
+    name: "Laura G.",
+    role: "Lectora Fiel",
+    text: "Gracias a la guía de jardinería de bajo mantenimiento, por fin tengo un balcón espectacular que no se me muere cada verano. Sus consejos son oro.",
+    rating: 5
+  },
+  {
+    name: "Carlos M.",
+    role: "Propietario",
+    text: "Estaba perdidísimo con el tema de las placas solares. El artículo detallado sobre inversores y subvenciones me ahorró muchos dolores de cabeza.",
+    rating: 5
+  },
+  {
+    name: "Elena y Roberto",
+    role: "Aventureros de la Reforma",
+    text: "Usamos la plantilla de presupuesto de reformas antes de contactar a contratistas y nos salvó de varias sorpresas desagradables. Muy recomendable el portal.",
+    rating: 4
+  },
+  {
+    name: "Miguel A.",
+    role: "Aficionado al Paisajismo",
+    text: "Las tendencias de exteriores que publican siempre están un paso por delante. He sacado ideas fantásticas para mi patio trasero de sus fotos.",
+    rating: 5
+  },
+  {
+    name: "Sofía T.",
+    role: "Diseñadora Junior",
+    text: "Como estudiante de interiorismo, UnEspacio es mi fuente principal de inspiración para materiales sostenibles e iluminación eficiente.",
+    rating: 5
+  },
+  {
+    name: "Javier R.",
+    role: "DIY Experto",
+    text: "Los tutoriales paso a paso son de lo mejor que he encontrado en internet. Directos, sin paja y con fotos que realmente muestran el proceso.",
+    rating: 5
+  }
+];
+---
+
+<BaseLayout title="Testimonios | UnEspacio">
+  <Header />
+  
+  <div class="pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[1200px] mx-auto px-6">
+      
+      <div class="text-center mb-20">
+        <h1 class="text-4xl md:text-5xl font-sans font-bold text-[#111827] mb-6 tracking-tight">Lo Que Dice Nuestra Comunidad</h1>
+        <p class="text-lg text-gray-600 font-sans max-w-2xl mx-auto">
+          Miles de lectores utilizan nuestros consejos cada mes para transformar sus hogares. Descubre cómo UnEspacio les ha ayudado en sus proyectos.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map((t) => (
+          <div class="bg-[#FDFBF7] p-8 rounded-2xl border border-black/5 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex gap-1 mb-6 text-yellow-400">
+                {Array.from({ length: t.rating }).map(() => (
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p class="text-gray-700 font-sans leading-relaxed italic mb-8">"{t.text}"</p>
+            </div>
+            <div>
+              <p class="font-sans font-bold text-[#111827]">{t.name}</p>
+              <p class="text-sm font-sans text-gray-500 uppercase tracking-wider">{t.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

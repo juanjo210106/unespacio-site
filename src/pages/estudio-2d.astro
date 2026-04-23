@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import GardenStudio from '../components/studio/GardenStudio';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Garden & Space Studio 2D - UnEspacio",
+  "operatingSystem": "Web",
+  "applicationCategory": "DesignApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "EUR"
+  },
+  "description": "Planificador de espacios 2D gratuito para diseño de jardines, exteriores y reformas. Arrastra y suelta elementos, calcula presupuestos y diseña tu espacio ideal.",
+  "creator": {
+    "@type": "Organization",
+    "name": "UnEspacio"
+  }
+};
+---
+
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Garden & Space Studio 2D | UnEspacio</title>
+  <meta name="description" content="Planificador de espacios 2D gratuito. Diseña tu jardín, piscina o reforma en tiempo real y calcula tu presupuesto estimado." />
+  
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</head>
+<body class="m-0 p-0 overflow-hidden">
+  <div class="h-screen w-full flex flex-col">
+    {/* We include the header but since the tool is full screen, we might want a compact version. We'll use the normal header but positioned absolutely if needed, or just let it take its space. Wait, the studio itself has a toolbar. Let's make the studio take the whole screen and not include the main header, or include a "Volver a UnEspacio" button in the studio toolbar. Let's just render the Studio directly to give it an "App" feel. */}
+    <div class="absolute top-4 left-6 z-[100] hidden sm:block">
+      <a href="/" class="text-white bg-[#0F172A] hover:bg-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-md transition-colors flex items-center gap-2">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Volver
+      </a>
+    </div>
+    
+    <main class="flex-1 w-full h-full">
+      <GardenStudio client:only="react" />
+    </main>
+  </div>
+</body>
+</html>

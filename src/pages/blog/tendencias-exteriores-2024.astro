@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+---
+
+<BaseLayout title="Tendencias Decoración Exteriores 2024 | UnEspacio">
+  <Header />
+  
+  <!-- Hero Editorial -->
+  <div class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920" alt="Terraza moderna decorada" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10"></div>
+    <div class="absolute inset-0 flex items-end pb-12 md:pb-24">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-12 w-full text-white">
+        <!-- Breadcrumbs en Hero -->
+        <nav class="text-sm text-white/70 font-sans mb-6 tracking-wide">
+          <a href="/" class="hover:text-white transition-colors">Inicio</a> <span class="mx-2">/</span>
+          <span class="text-white font-medium">Decoración</span>
+        </nav>
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-[11px] font-bold uppercase tracking-widest font-sans text-white">
+          Decoración
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-[1.1] mb-6 drop-shadow-xl max-w-4xl text-white">
+          Tendencias en Decoración de Exteriores para 2024
+        </h1>
+        <p class="text-lg md:text-xl text-white/90 font-sans max-w-2xl leading-relaxed drop-shadow-md text-white">
+          Convierte tu patio o terraza en una extensión natural de tu hogar con las corrientes de diseño paisajístico que dominan esta temporada.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido Principal con Sidebar -->
+  <main class="max-w-[1200px] mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row gap-16 lg:gap-24 relative">
+    
+    <!-- Sidebar Fija -->
+    <aside class="w-full md:w-[250px] shrink-0 font-sans hidden md:block">
+      <div class="sticky top-32">
+        <div class="mb-10">
+          <p class="text-gray-400 text-[11px] uppercase tracking-widest font-bold mb-2">Publicado</p>
+          <p class="text-[#0F172A] font-medium text-sm">18 Marzo, 2024</p>
+        </div>
+        <div class="mb-10">
+          <p class="text-gray-400 text-[11px] uppercase tracking-widest font-bold mb-2">Tiempo de Lectura</p>
+          <p class="text-[#0F172A] font-medium text-sm">5 minutos</p>
+        </div>
+        <div class="w-full h-px bg-gray-200 mb-10"></div>
+        <p class="text-gray-400 text-[11px] uppercase tracking-widest font-bold mb-4">Compartir</p>
+        <div class="flex gap-4 text-gray-500">
+          <button class="hover:text-black transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></button>
+          <button class="hover:text-black transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Artículo -->
+    <article class="prose prose-lg md:prose-xl prose-slate max-w-[800px] font-sans w-full prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-a:text-[#0F172A] prose-p:text-gray-700 prose-p:leading-relaxed">
+      <p class="lead text-2xl text-gray-800 font-medium mb-12">
+        La frontera entre el interior y el exterior de la vivienda se disuelve. Los espacios al aire libre reclaman el mismo nivel de confort, diseño y tecnología que cualquier salón de interior.
+      </p>
+
+      <h2>1. El Exterior como Sala de Estar (Outdoor Living)</h2>
+      <p>
+        En 2024, la principal tendencia es amueblar terrazas y jardines con la misma atención al detalle que el salón. Hablamos de <strong>sofás modulares resistentes a la intemperie</strong>, alfombras de exterior, e incluso elementos de entretenimiento como proyectores o cocinas completas al aire libre.
+      </p>
+
+      <h2>2. Materiales Sostenibles y Orgánicos</h2>
+      <p>
+        El respeto por el medio ambiente ya no es opcional, es el estándar. Los muebles fabricados con materiales reciclados, bambú, ratán o maderas con certificación FSC son los más buscados. Estos materiales no solo aportan calidez, sino que envejecen de manera hermosa, integrándose perfectamente en el <strong>diseño de exteriores moderno</strong>.
+      </p>
+
+      <h2>3. Iluminación Inteligente y Escultural</h2>
+      <p>
+        La iluminación deja de ser puramente funcional para convertirse en un elemento decorativo central. El uso de <strong>luces LED solares</strong>, balizas integradas en el suelo y guirnaldas cálidas permite crear atmósferas acogedoras, mejorando el ahorro energético de la vivienda.
+      </p>
+
+      <h2>4. Jardines Verticales y Biofilia</h2>
+      <p>
+        Para aquellos con espacios reducidos, como balcones urbanos, la tendencia dicta aprovechar la altura. Los jardines verticales no solo ahorran espacio, sino que actúan como aislantes térmicos y acústicos naturales, mejorando el bienestar general (diseño biofílico).
+      </p>
+    </article>
+  </main>
+</BaseLayout>

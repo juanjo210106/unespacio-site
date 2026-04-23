@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+---
+
+<BaseLayout title="Guía de Usuario | UnEspacio">
+  <Header />
+  
+  <div class="pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[800px] mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-sans font-bold text-[#111827] mb-8 tracking-tight">Guía de Usuario</h1>
+      
+      <div class="prose prose-lg prose-slate font-sans max-w-none prose-headings:font-sans prose-headings:font-bold prose-a:text-[#0F172A]">
+        <p class="lead text-xl text-gray-600">
+          Bienvenido a la guía de inicio de UnEspacio. Aquí te explicamos cómo aprovechar al máximo nuestro contenido para transformar tus espacios exteriores e interiores.
+        </p>
+
+        <h2>¿Cómo navegar por UnEspacio?</h2>
+        <p>
+          Hemos organizado nuestro contenido en cuatro categorías principales accesibles desde el menú superior:
+        </p>
+        <ul>
+          <li><strong>Jardinería:</strong> Guías botánicas, selección de plantas, técnicas de riego y cuidados por temporada.</li>
+          <li><strong>Reformas:</strong> Todo sobre obras estructurales, licencias, presupuestos y materiales de construcción.</li>
+          <li><strong>Placas Solares:</strong> Información técnica y financiera sobre autoconsumo, inversores, baterías y subvenciones.</li>
+          <li><strong>Exteriores:</strong> Tendencias de decoración, <em>outdoor living</em>, mobiliario e iluminación para terrazas y porches.</li>
+        </ul>
+
+        <h2>Uso del Buscador (Próximamente)</h2>
+        <p>
+          Actualmente estamos integrando un motor de búsqueda avanzado. Mientras tanto, te recomendamos usar la navegación por categorías o revisar nuestro <a href="/blog">Blog</a> para ver las últimas actualizaciones cronológicas.
+        </p>
+
+        <h2>Guardar Artículos</h2>
+        <p>
+          Si encuentras una guía útil (por ejemplo, sobre cómo podar rosales o instalar pérgolas bioclimáticas), te sugerimos guardarla en los marcadores de tu navegador. Pronto implementaremos cuentas de usuario para que puedas crear tus propios tableros de inspiración o "tableros de proyectos".
+        </p>
+
+        <div class="bg-[#FDFBF7] p-8 rounded-xl border border-black/5 my-10">
+          <h3 class="mt-0 text-xl font-bold">Consejo de uso</h3>
+          <p class="mb-0 text-[15px]">
+            Antes de iniciar cualquier proyecto de reforma basado en nuestras guías, revisa siempre la normativa urbanística de tu localidad, ya que las leyes varían significativamente entre diferentes ayuntamientos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

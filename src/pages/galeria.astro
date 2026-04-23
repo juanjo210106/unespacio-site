@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const images = [
+  "https://images.unsplash.com/photo-1585052201332-b8c0ce30972f?q=80&w=1000&auto=format&fit=crop", // Baño moderno
+  "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop", // Cocina
+  "https://images.unsplash.com/photo-1558904541-efa843a96f0a?q=80&w=1000&auto=format&fit=crop", // Jardín exterior
+  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop", // Salón minimalista
+  "https://images.unsplash.com/photo-1416879598555-46e3cb588a4e?q=80&w=1000&auto=format&fit=crop", // Paisajismo
+  "https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?q=80&w=1000&auto=format&fit=crop"  // Terraza
+];
+---
+
+<BaseLayout title="Galería de Inspiración | UnEspacio">
+  <Header />
+  
+  <div class="pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[1400px] mx-auto px-6">
+      
+      <div class="mb-16">
+        <h1 class="text-4xl md:text-5xl font-sans font-bold text-[#111827] mb-4 tracking-tight">Galería</h1>
+        <p class="text-lg text-gray-600 font-sans max-w-2xl">
+          Explora nuestra selección curada de espacios interiores y exteriores para encontrar la inspiración perfecta para tu próximo proyecto.
+        </p>
+      </div>
+      
+      <!-- Masonry Grid CSS approach -->
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        {images.map((src, index) => (
+          <div class="break-inside-avoid relative group rounded-2xl overflow-hidden bg-gray-100">
+            <img src={src} alt={`Inspiración ${index + 1}`} class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 text-center">
+        <button class="bg-transparent border border-[#0F172A] text-[#0F172A] px-8 py-3 rounded-full font-sans font-bold uppercase tracking-widest text-xs hover:bg-[#0F172A] hover:text-white transition-colors">
+          Cargar Más
+        </button>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

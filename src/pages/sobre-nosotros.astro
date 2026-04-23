@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+---
+
+<BaseLayout title="Sobre Nosotros | UnEspacio">
+  <Header />
+  
+  <!-- Hero Section -->
+  <div class="relative w-full h-[60vh] min-h-[500px]">
+    <img 
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
+      alt="Interior design team" 
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <h1 class="text-5xl md:text-6xl font-sans font-bold text-white tracking-tight drop-shadow-lg text-center px-6">
+        Diseñando Espacios,<br/>Inspirando Vidas.
+      </h1>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="py-24 bg-white">
+    <div class="max-w-[1000px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      
+      <div>
+        <h2 class="text-3xl font-sans font-bold text-[#111827] mb-6">Nuestra Historia</h2>
+        <p class="text-gray-600 font-sans leading-relaxed mb-6">
+          UnEspacio nació con una idea simple: democratizar el acceso al buen diseño y a la información técnica de calidad sobre reformas y jardinería. Creemos que cada persona merece vivir en un entorno que refleje su personalidad y respete el medio ambiente.
+        </p>
+        <p class="text-gray-600 font-sans leading-relaxed">
+          Desde nuestros inicios como un pequeño blog, hemos crecido hasta convertirnos en una plataforma editorial líder, colaborando con expertos en paisajismo, arquitectura sostenible e interiorismo para traerte las mejores guías del mercado.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-square rounded-2xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Oficina de arquitectura" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-[#0F172A] text-white p-8 rounded-xl shadow-lg max-w-[250px] hidden md:block">
+          <p class="font-sans font-bold text-2xl mb-1">+10 Años</p>
+          <p class="text-sm text-gray-300">Inspirando y guiando en la creación de hogares únicos.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Manifesto -->
+  <div class="py-24 bg-[#FDFBF7]">
+    <div class="max-w-[800px] mx-auto px-6 text-center">
+      <h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">Nuestro Manifiesto</h3>
+      <p class="text-3xl md:text-4xl font-sans font-medium text-[#111827] leading-snug">
+        "No vendemos casas, ayudamos a crear hogares. Apostamos por la sostenibilidad, la estética atemporal y la practicidad diaria."
+      </p>
+    </div>
+  </div>
+</BaseLayout>

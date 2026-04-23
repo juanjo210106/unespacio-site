@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { title, description = "UnEspacio - Plataforma híbrida de contenido editorial de alta gama." } = Astro.props;
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -22,7 +23,8 @@ const { title, description = "UnEspacio - Plataforma híbrida de contenido edito
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-canvas text-primary antialiased">
+	<body class="bg-canvas text-primary antialiased flex flex-col min-h-screen">
 		<slot />
+		<Footer />
 	</body>
 </html>

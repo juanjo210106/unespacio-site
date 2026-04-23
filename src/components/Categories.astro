@@ -1,0 +1,79 @@
+---
+// Categories.astro
+const categories = [
+  {
+    title: "Diseño de Jardines",
+    description: "Crea espacios exteriores funcionales y estéticos. Descubre las últimas tendencias en paisajismo moderno y diseño premium.",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800",
+    icon: `<svg class="w-11 h-11 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>`
+  },
+  {
+    title: "Mantenimiento",
+    description: "Mantén tu jardín en perfectas condiciones todo el año. Guías de poda, riego y cuidados esenciales para tus plantas.",
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800",
+    icon: `<svg class="w-11 h-11 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>`
+  },
+  {
+    title: "Terrazas y Patios",
+    description: "Transforma tu terraza en un oasis urbano. Ideas de mobiliario, iluminación y decoración para exteriores.",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
+    icon: `<svg class="w-11 h-11 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>`
+  },
+  {
+    title: "Selección de Plantas",
+    description: "Aprende a elegir las mejores especies según tu clima y espacio. Crea combinaciones perfectas de texturas y colores.",
+    image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=800",
+    icon: `<svg class="w-11 h-11 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>`
+  }
+];
+---
+
+<section class="w-full bg-white py-32 px-4 md:px-12 relative">
+  
+  <!-- SEO Header Block -->
+  <div class="max-w-4xl mx-auto text-center mb-16 md:mb-20">
+    <h2 class="text-3xl md:text-5xl font-bold text-[#0F172A] tracking-tight font-sans mb-6">
+      Inspiración para tu Hogar y Jardín
+    </h2>
+    <p class="text-[15px] md:text-[16px] text-gray-600 leading-relaxed font-sans">
+      Descubre las mejores ideas, trucos y guías paso a paso para transformar tus espacios. Desde diseño de jardines y paisajismo sostenible, hasta la elección perfecta de plantas y el mantenimiento de terrazas. Optimiza tu hogar con nuestros artículos expertos diseñados para inspirarte y ayudarte a crear el oasis perfecto.
+    </p>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+    {categories.map((cat) => (
+      <a href="/categoria" class="relative w-full h-[480px] lg:h-[550px] rounded-[10px] overflow-hidden group cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 block">
+        
+        <!-- Background Image -->
+        <img src={cat.image} alt={cat.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-110" />
+        
+        <!-- Gradient Overlay -->
+        <!-- Fondo pizarra oscuro sólido abajo, que se desvanece suavemente hacia el centro-arriba -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A] from-0% via-[#0F172A] via-[35%] to-transparent to-[85%] opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <!-- Content -->
+        <div class="absolute inset-0 flex flex-col justify-end p-8 text-center text-white z-10">
+          <div class="flex flex-col items-center transform transition-transform duration-500 group-hover:-translate-y-2">
+            
+            <!-- Icon -->
+            <div class="mb-5 text-white opacity-90 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+              <span set:html={cat.icon}></span>
+            </div>
+            
+            <!-- Title -->
+            <h3 class="text-[17px] md:text-[18px] font-bold mb-3 font-sans tracking-wide text-white drop-shadow-md">{cat.title}</h3>
+            
+            <!-- Description -->
+            <p class="text-[13px] md:text-[14px] text-gray-200 leading-[1.6] opacity-90 mb-1">
+              {cat.description}
+            </p>
+            
+          </div>
+        </div>
+        
+      </a>
+    ))}
+  </div>
+
+</section>

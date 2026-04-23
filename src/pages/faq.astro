@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const faqs = [
+  {
+    q: "¿Qué tipo de contenido puedo encontrar en UnEspacio?",
+    a: "En UnEspacio publicamos guías completas, tendencias de diseño y tutoriales paso a paso sobre jardinería, paisajismo, reformas integrales y soluciones de sostenibilidad para el hogar, como la instalación de placas solares."
+  },
+  {
+    q: "¿Las guías son válidas para cualquier clima o país?",
+    a: "Nuestras guías intentan ser lo más globales posible, pero siempre hacemos énfasis en soluciones mediterráneas y climas templados. Cuando sugerimos plantas específicas, detallamos sus necesidades de sol y agua para que evalúes si se adaptan a tu zona."
+  },
+  {
+    q: "¿Puedo colaborar publicando artículos o proyectos?",
+    a: "¡Sí! Estamos abiertos a colaboraciones con paisajistas, arquitectos y diseñadores de interiores. Puedes enviarnos un mensaje a través de nuestra página de Contacto con un resumen de tu proyecto o idea."
+  },
+  {
+    q: "¿Cómo me suscribo a la newsletter semanal?",
+    a: "Puedes suscribirte utilizando el formulario que se encuentra en la parte inferior (Footer) de cualquier página de nuestro sitio. Solo necesitas introducir tu correo electrónico."
+  },
+  {
+    q: "¿Ofrecéis servicios directos de reformas o jardinería?",
+    a: "Actualmente, UnEspacio es un portal puramente editorial e informativo. Sin embargo, en el futuro planeamos abrir un directorio de profesionales verificados para conectar a nuestros lectores con expertos de su zona."
+  }
+];
+---
+
+<BaseLayout title="Preguntas Frecuentes (FAQ) | UnEspacio">
+  <Header />
+  
+  <div class="pt-32 pb-24 bg-white min-h-screen">
+    <div class="max-w-[800px] mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-sans font-bold text-[#111827] mb-6 tracking-tight">Preguntas Frecuentes</h1>
+        <p class="text-lg text-gray-600 font-sans max-w-2xl mx-auto">
+          Resolvemos las dudas más comunes sobre nuestra plataforma editorial, nuestro contenido y cómo puedes interactuar con nuestra comunidad.
+        </p>
+      </div>
+      
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <details class="group border border-gray-200 rounded-2xl bg-[#FDFBF7] [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-sans font-semibold text-[#0F172A]">
+              <span>{faq.q}</span>
+              <span class="transition-transform duration-300 group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="p-6 pt-0 text-gray-600 font-sans leading-relaxed border-t border-transparent group-open:border-gray-100 mt-2">
+              <p>{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="text-gray-600 font-sans mb-4">¿No encuentras lo que buscas?</p>
+        <a href="/contacto" class="inline-block bg-[#0F172A] text-white px-8 py-3 rounded-full font-sans font-bold uppercase tracking-widest text-xs hover:bg-black transition-colors">
+          Contacta con Soporte
+        </a>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
